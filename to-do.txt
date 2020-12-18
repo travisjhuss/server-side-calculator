@@ -1,0 +1,45 @@
+Server Side Calculator 
+    - Weekend Challenge #2
+
+
+-- Set Up --
+    [x] - Server Folder
+        [x] - server.js
+            [ ] - express require, app.use
+            [ ] - bodyParser require, app.use
+            [ ] - define app
+            [ ] - define PORT
+        [x] - public folder
+            [x] - HTML
+                [ ] - src scripts
+                [ ] - link CSS
+            [x] - CSS
+            [x] - jQuery
+            [x] - client.js
+    [x] - npm init --yes
+        [x] - add npm script
+        [x] - npm install express
+
+-- HTML --
+    [ ] - two input elements (numbers)
+    [ ] - 4 buttons for each math operation
+    [ ] - equals buttons
+    [ ] - 'C' button to clear
+
+
+-- CSS --
+    [ ] - whatever
+
+
+-- client.js --
+    [ ] - takes inputs fields and sends to server as object
+
+
+-- server.js --
+    [ ] - math logic taking inputs from client
+    [ ] - GET
+        [ ] - array of calculation
+    [ ] - POST
+        [ ] - calls function to do calculation
+    [ ] - keep history of each 
+    [ ] - function that does calculation
