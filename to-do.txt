@@ -5,10 +5,11 @@ Server Side Calculator
 -- Set Up --
     [x] - Server Folder
         [x] - server.js
-            [ ] - express require, app.use
-            [ ] - bodyParser require, app.use
-            [ ] - define app
-            [ ] - define PORT
+            [x] - express require, app.use
+            [x] - bodyParser require, app.use
+            [x] - define app
+            [x] - define PORT
+            [x] - app.listen
         [x] - public folder
             [x] - HTML
                 [x] - src scripts
@@ -16,6 +17,7 @@ Server Side Calculator
             [x] - CSS
             [x] - jQuery
             [x] - client.js
+            [x] - bootstrap
     [x] - npm init --yes
         [x] - add npm script
         [x] - npm install express
