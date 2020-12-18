@@ -11,8 +11,8 @@ Server Side Calculator
             [ ] - define PORT
         [x] - public folder
             [x] - HTML
-                [ ] - src scripts
-                [ ] - link CSS
+                [x] - src scripts
+                [x] - link CSS
             [x] - CSS
             [x] - jQuery
             [x] - client.js
@@ -21,10 +21,12 @@ Server Side Calculator
         [x] - npm install express
 
 -- HTML --
-    [ ] - two input elements (numbers)
-    [ ] - 4 buttons for each math operation
-    [ ] - equals buttons
-    [ ] - 'C' button to clear
+    [x] - two input elements (numbers)
+    [x] - 4 buttons for each math operation
+    [x] - equals buttons
+    [x] - 'C' button to clear
+    [x] - output for answer
+    [x] - ul for previous equations
 
 
 -- CSS --
