@@ -12,5 +12,8 @@
     width: 100%;
     text-align: right;
     grid-column: 1 / 5;
+}
 
+#equalBtn {
+    grid-column: 1 / 5;
 }
