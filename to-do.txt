@@ -37,6 +37,7 @@ Server Side Calculator
 
 -- client.js --
     [ ] - takes inputs fields and sends to server as object
+    [ ] - button functions for each button
 
 
 -- server.js --
