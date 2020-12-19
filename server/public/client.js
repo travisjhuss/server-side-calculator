@@ -26,15 +26,20 @@ function onReady() {
 // defining object to send to server
 let equationObject = {};
 
-// BUTTON FUNCTIONS
-function runCalculator() {
-    console.log('clicked equals');
-    // taking string from calc screen and separating to determine equation
+// --------- BUTTON FUNCTIONS --------- //
 
-    // assigning inputs to values in object to send to server
-    // equationObject.numberOne = $('#firstNumIn').val();
-    // equationObject.numberTwo = $('#secondNumIn').val();
-    console.log(equationObject);
+function runCalculator() {
+    // taking string from calcScreen and separating to determine equation
+    let equationString = $('#calcScreen').text();
+    // console.log(equationString);
+    // take string, split it by the spaces and put in array
+    let array = equationString.split(' ');
+    // console.log(array);
+    // assigning array values to object accordingly to send to server
+    equationObject.numberOne = array[0];
+    equationObject.operator = array[1];
+    equationObject.numberTwo = array[2];
+    // console.log(equationObject);
 
     $.ajax({
         url: '/calculator',
@@ -164,6 +169,7 @@ function pointButton() {
 function plusOperator() {
     // console.log('clicked plus');
     // equationObject.operator = '+';
+    // logic to see if an operator has already been input 
     let display = $('#calcScreen').text();
     if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
         // run equation
@@ -176,21 +182,37 @@ function plusOperator() {
 function minusOperator() {
     // console.log('clicked minus');
     // equationObject.operator = '-';
-    $('#calcScreen').append(' - ');
+    // logic to see if an operator has already been input 
+    let display = $('#calcScreen').text();
+    if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
+        // run equation
+    } else {
+        $('#calcScreen').append(' - ');
+    }
 
 } // end minusOperator
 
 function multiplyOperator() {
     // console.log('clicked multiply');
     // equationObject.operator = '*';
-    $('#calcScreen').append(' * ');
+    let display = $('#calcScreen').text();
+    if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
+        // run equation
+    } else {
+        $('#calcScreen').append(' * ');
+    }
 
 } // end multiplyOperator
 
 function divideOperator() {
     // console.log('clicked divide');
     // equationObject.operator = '/';
-    $('#calcScreen').append(' / ');
+    let display = $('#calcScreen').text();
+    if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
+        // run equation
+    } else {
+        $('#calcScreen').append(' / ');
+    }
 
 } // end divideOperator
 
@@ -202,7 +224,7 @@ function clearCalc() {
     $('#calcScreen').text('0');
 } // end clearCalc
 
-// ------------ end button functions ------------ //
+// ------------ END BUTTON FUNCTIONS ------------ //
 
 // GET function
 function getResponseFromServer() {
@@ -219,7 +241,7 @@ function getResponseFromServer() {
 function appendToDom(object) {
     // console.log(object);
     // display latest result in calcOutput
-    $('#calcOutput').empty().append(`= ${object[object.length - 1].results}`);
+    $('#calcScreen').empty().append(`${object[object.length - 1].results}`);
     // display object array as ul on DOM
     $('#calcHistory').empty();
     for (let i = (object.length - 1); i >= 0; i--) {
