@@ -29,10 +29,12 @@ let equationObject = {};
 // BUTTON FUNCTIONS
 function runCalculator() {
     console.log('clicked equals');
+    // taking string from calc screen and separating to determine equation
+
     // assigning inputs to values in object to send to server
-    equationObject.numberOne = $('#firstNumIn').val();
-    equationObject.numberTwo = $('#secondNumIn').val();
-    // console.log(equationObject);
+    // equationObject.numberOne = $('#firstNumIn').val();
+    // equationObject.numberTwo = $('#secondNumIn').val();
+    console.log(equationObject);
 
     $.ajax({
         url: '/calculator',
@@ -162,7 +164,12 @@ function pointButton() {
 function plusOperator() {
     // console.log('clicked plus');
     // equationObject.operator = '+';
-    $('#calcScreen').append(' + ');
+    let display = $('#calcScreen').text();
+    if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
+        // run equation
+    } else {
+        $('#calcScreen').append(' + ');
+    }
 
 } // end plusOperator
 
