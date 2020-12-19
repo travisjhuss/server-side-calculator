@@ -20,8 +20,18 @@ function runCalculator() {
     equationObject.numberOne = $('#firstNumIn').val();
     equationObject.numberTwo = $('#secondNumIn').val();
     console.log(equationObject);
-    
 
+    $.ajax({
+        url: '/calculator',
+        type: 'POST',
+        data: equationObject
+    }).then(function (response) {
+        console.log(response);
+        // getResponseFromServer();
+    });
+
+
+    
 } // end runCalculator
 
 function plusOperator() {
@@ -55,3 +65,12 @@ function clearCalc() {
     $('#secondNumIn').val('');
     delete equationObject.operator;
 } // end clearCalc
+
+function getResponseFromServer() {
+    $.ajax({
+      url: '/calculator',
+      type: 'GET'
+    }).then(function (response) {
+      console.log('response from server:', response);
+    });
+  } // end getResponseFromServer
