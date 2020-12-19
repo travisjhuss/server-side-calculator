@@ -36,15 +36,17 @@ Server Side Calculator
 
 
 -- client.js --
-    [ ] - takes inputs fields and sends to server as object
-    [ ] - button functions for each button
+    [x] - takes inputs fields and sends to server as object
+    [x] - button functions for each button
 
 
 -- server.js --
-    [ ] - math logic taking inputs from client
-    [ ] - GET
-        [ ] - array of calculation
-    [ ] - POST
-        [ ] - calls function to do calculation
-    [ ] - keep history of each 
-    [ ] - function that does calculation
+    [x] - math logic taking inputs from client
+    [x] - GET
+        [x] - array of calculation
+    [x] - POST
+        [x] - calls function to do calculation
+    [x] - keep history of each 
+    
+
+**** STRETCH GOALS ****

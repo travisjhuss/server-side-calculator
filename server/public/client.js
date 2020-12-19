@@ -36,32 +36,31 @@ function runCalculator() {
 } // end runCalculator
 
 function plusOperator() {
-    delete equationObject.operator;
-    console.log('clicked plus');
+    // console.log('clicked plus');
     equationObject.operator = '+';
 
 } // end plusOperator
 
 function minusOperator() {
-    console.log('clicked minus');
+    // console.log('clicked minus');
     equationObject.operator = '-';
 
 } // end minusOperator
 
 function multiplyOperator() {
-    console.log('clicked multiply');
+    // console.log('clicked multiply');
     equationObject.operator = '*';
 
 } // end multiplyOperator
 
 function divideOperator() {
-    console.log('clicked divide');
+    // console.log('clicked divide');
     equationObject.operator = '/';
 
 } // end divideOperator
 
 function clearCalc() {
-    console.log('clicked clear');
+    // console.log('clicked clear');
     $('#firstNumIn').val('');
     $('#secondNumIn').val('');
     delete equationObject.operator;
@@ -80,7 +79,7 @@ function getResponseFromServer() {
 } // end getResponseFromServer
 
 function appendToDom(object) {
-    console.log(object);
+    // console.log(object);
     // display latest result in calcOutput
     $('#calcOutput').empty().append(`= ${object[object.length - 1].results}`);
     // display object array as ul on DOM
