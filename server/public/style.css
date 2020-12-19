@@ -1,0 +1,16 @@
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    background-color: darkgray;
+    margin-left: 25%;
+    margin-right: 25%;
+    padding: 10px;
+}
+
+#calcScreen {
+    width: 100%;
+    text-align: right;
+    grid-column: 1 / 5;
+
+}
