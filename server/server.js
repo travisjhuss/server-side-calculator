@@ -7,25 +7,31 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('server/public'));
 
 // array for calculation history
-let calculationHistory = ['test', 'one', 'two'];
+let calculationHistory = [];
 
 function calculateObject(object) {
     console.log('object to run:', object);
     switch (object.operator) {
         case "+":
             console.log(`${object.numberOne} plus ${object.numberTwo}`);
+            object.results = Number(object.numberOne) + Number(object.numberTwo);
             break;
         case "-":
             console.log(`${object.numberOne} minus ${object.numberTwo}`);
+            object.results = Number(object.numberOne) - Number(object.numberTwo);
             break;
         case "*":
             console.log(`${object.numberOne} times ${object.numberTwo}`);
+            object.results = Number(object.numberOne) * Number(object.numberTwo);
             break;
         case "/":
             console.log(`${object.numberOne} divided by ${object.numberTwo}`);
+            object.results = Number(object.numberOne) / Number(object.numberTwo);
             break;
 
     } // end switch
+
+    calculationHistory.push(object);
 
 } // end calculateObject
 

@@ -27,7 +27,7 @@ function runCalculator() {
         data: equationObject
     }).then(function (response) {
         console.log(response);
-        // getResponseFromServer();
+        getResponseFromServer();
     });
 
 
