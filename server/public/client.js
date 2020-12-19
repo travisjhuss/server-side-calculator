@@ -15,11 +15,13 @@ function onReady() {
 // defining object to send to server
 let equationObject = {};
 
+// BUTTON FUNCTIONS
 function runCalculator() {
     console.log('clicked equals');
+    // assigning inputs to values in object to send to server
     equationObject.numberOne = $('#firstNumIn').val();
     equationObject.numberTwo = $('#secondNumIn').val();
-    console.log(equationObject);
+    // console.log(equationObject);
 
     $.ajax({
         url: '/calculator',
@@ -27,11 +29,10 @@ function runCalculator() {
         data: equationObject
     }).then(function (response) {
         console.log(response);
+        // get calculationHistory from server
         getResponseFromServer();
     });
 
-
-    
 } // end runCalculator
 
 function plusOperator() {
@@ -66,11 +67,28 @@ function clearCalc() {
     delete equationObject.operator;
 } // end clearCalc
 
+// GET function
 function getResponseFromServer() {
     $.ajax({
-      url: '/calculator',
-      type: 'GET'
+        url: '/calculator',
+        type: 'GET'
     }).then(function (response) {
-      console.log('response from server:', response);
+        //console.log('response from server:', response);
+        // take array from server and put on DOM
+        appendToDom(response);
     });
-  } // end getResponseFromServer
+} // end getResponseFromServer
+
+function appendToDom(object) {
+    console.log(object);
+    // display latest result in calcOutput
+    $('#calcOutput').empty().append(`= ${object[object.length - 1].results}`);
+    // display object array as ul on DOM
+    $('#calcHistory').empty();
+    for (let i = (object.length - 1); i >= 0; i--) {
+        $('#calcHistory').append(`
+        <li>${object[i].numberOne} ${object[i].operator} ${object[i].numberTwo} = ${object[i].results}</li>
+    `)
+    } // end for
+
+} // end appendToDom
