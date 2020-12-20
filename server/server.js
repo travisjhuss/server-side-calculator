@@ -11,6 +11,7 @@ let calculationHistory = [];
 
 function calculateObject(object) {
     console.log('object to run:', object);
+    // grab the object, check what the operator is and run math accordingly, adding the result as a new property
     switch (object.operator) {
         case "+":
             console.log(`${object.numberOne} plus ${object.numberTwo}`);
@@ -30,7 +31,7 @@ function calculateObject(object) {
             break;
 
     } // end switch
-
+    // Push that object into the server side's array
     calculationHistory.push(object);
 
 } // end calculateObject
@@ -38,6 +39,7 @@ function calculateObject(object) {
 
 // GET route
 app.get('/calculator', (req, res) => {
+    // send server side array to front end
     res.send(calculationHistory);
 });
 
@@ -50,7 +52,9 @@ app.post('/calculator', (req, res) => {
 
 //attempt at app.delete
 app.delete('/calculator', function (req, res) {
+    // empty array
     calculationHistory = [];
+    // send back
     res.send(calculationHistory)
 });
 

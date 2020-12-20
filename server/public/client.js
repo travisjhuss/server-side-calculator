@@ -38,6 +38,7 @@ function runCalculator() {
         $('.hidden-message').append('might be missing another part of this ... equation');
 
     } else {
+        // remove hidden message
         $('.hidden-message').text('')
         // take string, split it by the spaces and put in array
         let array = equationString.split(' ');
