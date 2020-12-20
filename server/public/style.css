@@ -37,8 +37,9 @@ body {
 
 .calculator {
     display: grid;
+    position: relative;
     width: 450px;
-    height: 475px;
+    height: 500px;
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
     border-top: #F98948 solid 2px;
@@ -52,11 +53,11 @@ body {
         rgba(139,139,139,1) 26%, 
         rgba(70,70,70,1) 66%,
         rgba(42,42,42,1) 100%);
-    margin-top: 4%;
+    margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
-    padding-top: 2%;
+    padding-top: 30px;
 }
 
 #calcScreen {
@@ -67,7 +68,7 @@ body {
     font-family: 'Orbitron';
     background-color: #A2FAA3;
     color: black;
-    overflow-wrap: anywhere;
+    overflow: scroll;
     padding: 2%;
 }
 
@@ -116,15 +117,15 @@ ul {
 }
 
 .hidden-message {
-    margin-top: 1%;
     font-family: 'Orbitron';
     font-weight: 400;
     font-size: 15px;
     color: #A2FAA3;
     text-align: right;
-    width: 450px;
-    margin-left: 27%;
-    margin-right: 0%;
+    width: 415px;
     padding-right: 5px;
     position: absolute;
+    grid-column: 1 / 5;
+    margin-top: 5px;
+
 }

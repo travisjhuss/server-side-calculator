@@ -9,7 +9,7 @@ Your project description goes here. What problem did you solve? How did you solv
 went well
 - switch case
 - to do list
-- loggin
+- logging
 - design
 
 issues
