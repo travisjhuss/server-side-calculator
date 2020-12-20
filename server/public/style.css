@@ -63,7 +63,7 @@ body {
     width: 100%;
     text-align: right;
     grid-column: 1 / 5;
-    border: black 2px solid;
+    border: #292b2c 4px inset;
     font-family: 'Orbitron';
     background-color: #A2FAA3;
     color: black;

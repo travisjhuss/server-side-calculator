@@ -29,28 +29,32 @@ let equationObject = {};
 // --------- BUTTON FUNCTIONS --------- //
 
 function runCalculator() {
-    // taking string from calcScreen and separating to determine equation
+    // taking string from calcScreen
     let equationString = $('#calcScreen').text();
-    // console.log(equationString);
-    // take string, split it by the spaces and put in array
-    let array = equationString.split(' ');
-    // console.log(array);
-    // assigning array values to object accordingly to send to server
-    equationObject.numberOne = array[0];
-    equationObject.operator = array[1];
-    equationObject.numberTwo = array[2];
-    // console.log(equationObject);
+    // check to make sure string is not '0' or ending in an operator
+    if (equationString.charAt(equationString.length - 1) === '0' || equationString.charAt(equationString.length - 1) === ' ') {
+        console.log('NOOOOO');
 
-    $.ajax({
-        url: '/calculator',
-        type: 'POST',
-        data: equationObject
-    }).then(function (response) {
-        console.log(response);
-        // get calculationHistory from server
-        getResponseFromServer();
-    });
+    } else {
+        // take string, split it by the spaces and put in array
+        let array = equationString.split(' ');
+        // console.log(array);
+        // assigning array values to object accordingly to send to server
+        equationObject.numberOne = array[0];
+        equationObject.operator = array[1];
+        equationObject.numberTwo = array[2];
+        // console.log(equationObject);
 
+        $.ajax({
+            url: '/calculator',
+            type: 'POST',
+            data: equationObject
+        }).then(function (response) {
+            console.log(response);
+            // get calculationHistory from server
+            getResponseFromServer();
+        });
+    }
 } // end runCalculator
 
 

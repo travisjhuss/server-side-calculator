@@ -50,3 +50,12 @@ Server Side Calculator
     
 
 **** STRETCH GOALS ****
+
+    [x] - make look like calculator and function as such
+    [ ] - Only allow the POST call to happen if all necessary input is ready.
+            [ ] - dont accept is there is an operator with no number after
+            [ ] - if equals button is hit when zero dont run
+    [ ] - Allow a user to clear the history by clicking on a button. 
+          Technically this shouldn't be a GET or a POST. Look into making a DELETE request!
+    [ ] - Allow a user to click on an entry in the History list to re-run that calculation. 
+          This should display the answer on the calculator interface like a normal calculation.
