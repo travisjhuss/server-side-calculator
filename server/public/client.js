@@ -32,10 +32,20 @@ function runCalculator() {
     // taking string from calcScreen
     let equationString = $('#calcScreen').text();
     // check to make sure string is not '0' or ending in an operator
-    if (equationString.charAt(equationString.length - 1) === '0' || equationString.charAt(equationString.length - 1) === ' ') {
-        console.log('NOOOOO');
+    if (equationString.charAt(equationString.length - 1) === ' ') {
+        $('.hidden-message').text('');
+        $('.hidden-message').append('Might be missing another part of this ... equation');
+
+    } else if (equationString.indexOf('+') === -1 ||
+        equationString.indexOf('-') === -1 ||
+        equationString.indexOf('*') === -1 ||
+        equationString.indexOf('/') === -1 ||
+        equationString.charAt(equationString.length - 1) === '0') {
+        $('.hidden-message').text('');
+        $('.hidden-message').append('... what would you like to do with that number');
 
     } else {
+        $('.hidden-message').text('')
         // take string, split it by the spaces and put in array
         let array = equationString.split(' ');
         // console.log(array);
@@ -217,6 +227,8 @@ function divideOperator() {
 function clearCalc() {
     // clear display
     $('#calcScreen').text('0');
+    $('.hidden-message').text('');
+
 } // end clearCalc
 
 // ------------ END BUTTON FUNCTIONS ------------ //

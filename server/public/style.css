@@ -52,7 +52,7 @@ body {
         rgba(139,139,139,1) 26%, 
         rgba(70,70,70,1) 66%,
         rgba(42,42,42,1) 100%);
-    margin-top: 5%;
+    margin-top: 4%;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -100,4 +100,18 @@ body {
     font-family: 'Orbitron';
     font-weight: 400;
     font-size: 30px;
+}
+
+.hidden-message {
+    margin-top: 1%;
+    font-family: 'Orbitron';
+    font-weight: 400;
+    font-size: 15px;
+    color: #A2FAA3;
+    text-align: right;
+    width: 450px;
+    margin-left: 27%;
+    margin-right: 0%;
+    padding-right: 5px;
+    position: absolute;
 }
