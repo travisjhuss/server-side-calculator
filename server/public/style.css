@@ -82,3 +82,22 @@ body {
     font-size: 30px;
     font-family: 'Orbitron';
 }
+
+.history {
+    margin-top: 5%;
+    font-family: 'Orbitron';
+    font-weight: 400;
+    font-size: 20px;
+    color: #A2FAA3;
+    text-align: center;
+}
+
+.history p {
+    background-color: #2E294E;
+    color: #A2FAA3;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Orbitron';
+    font-weight: 400;
+    font-size: 30px;
+}
