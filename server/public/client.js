@@ -167,12 +167,10 @@ function pointButton() {
 } // end pointButton
 
 function plusOperator() {
-    // console.log('clicked plus');
-    // equationObject.operator = '+';
     // logic to see if an operator has already been input 
     let display = $('#calcScreen').text();
     if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
-        // run equation
+        // do nothing
     } else {
         $('#calcScreen').append(' + ');
     }
@@ -180,12 +178,10 @@ function plusOperator() {
 } // end plusOperator
 
 function minusOperator() {
-    // console.log('clicked minus');
-    // equationObject.operator = '-';
     // logic to see if an operator has already been input 
     let display = $('#calcScreen').text();
     if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
-        // run equation
+        // do nothing
     } else {
         $('#calcScreen').append(' - ');
     }
@@ -193,11 +189,10 @@ function minusOperator() {
 } // end minusOperator
 
 function multiplyOperator() {
-    // console.log('clicked multiply');
-    // equationObject.operator = '*';
+    // logic to see if an operator has already been input 
     let display = $('#calcScreen').text();
     if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
-        // run equation
+        // do nothing
     } else {
         $('#calcScreen').append(' * ');
     }
@@ -205,11 +200,10 @@ function multiplyOperator() {
 } // end multiplyOperator
 
 function divideOperator() {
-    // console.log('clicked divide');
-    // equationObject.operator = '/';
+    // logic to see if an operator has already been input 
     let display = $('#calcScreen').text();
     if (display.includes('+') || display.includes('-') || display.includes('*') || display.includes('/')) {
-        // run equation
+        // do nothing
     } else {
         $('#calcScreen').append(' / ');
     }
@@ -217,10 +211,7 @@ function divideOperator() {
 } // end divideOperator
 
 function clearCalc() {
-    // console.log('clicked clear');
-    // $('#firstNumIn').val('');
-    // $('#secondNumIn').val('');
-    // delete equationObject.operator;
+    // clear display
     $('#calcScreen').text('0');
 } // end clearCalc
 
