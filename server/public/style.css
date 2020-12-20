@@ -83,6 +83,10 @@ body {
     font-family: 'Orbitron';
 }
 
+ul {
+    list-style-type: none;
+}
+
 .history {
     margin-top: 5%;
     font-family: 'Orbitron';

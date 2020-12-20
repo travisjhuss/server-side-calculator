@@ -34,36 +34,33 @@ function runCalculator() {
     // check to make sure string is not '0' or ending in an operator
     if (equationString.charAt(equationString.length - 1) === ' ') {
         $('.hidden-message').text('');
-        $('.hidden-message').append('Might be missing another part of this ... equation');
-
-    } else if (equationString.indexOf('+') === -1 ||
-        equationString.indexOf('-') === -1 ||
-        equationString.indexOf('*') === -1 ||
-        equationString.indexOf('/') === -1 ||
-        equationString.charAt(equationString.length - 1) === '0') {
-        $('.hidden-message').text('');
-        $('.hidden-message').append('... what would you like to do with that number');
+        $('.hidden-message').append('might be missing another part of this ... equation');
 
     } else {
         $('.hidden-message').text('')
         // take string, split it by the spaces and put in array
         let array = equationString.split(' ');
-        // console.log(array);
-        // assigning array values to object accordingly to send to server
-        equationObject.numberOne = array[0];
-        equationObject.operator = array[1];
-        equationObject.numberTwo = array[2];
-        // console.log(equationObject);
+        // check to make sure not a single number
+        if (array.length === 1) {
+            $('.hidden-message').text('');
+            $('.hidden-message').append('... what would you like me to do with this');
+        } else {
+            // assigning array values to object accordingly to send to server
+            equationObject.numberOne = array[0];
+            equationObject.operator = array[1];
+            equationObject.numberTwo = array[2];
+            // console.log(equationObject);
 
-        $.ajax({
-            url: '/calculator',
-            type: 'POST',
-            data: equationObject
-        }).then(function (response) {
-            console.log(response);
-            // get calculationHistory from server
-            getResponseFromServer();
-        });
+            $.ajax({
+                url: '/calculator',
+                type: 'POST',
+                data: equationObject
+            }).then(function (response) {
+                console.log(response);
+                // get calculationHistory from server
+                getResponseFromServer();
+            });
+        }
     }
 } // end runCalculator
 
