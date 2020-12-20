@@ -38,16 +38,20 @@ function calculateObject(object) {
 
 // GET route
 app.get('/calculator', (req, res) => {
-    console.log('inside the calculator!!');
     res.send(calculationHistory);
 });
 
 app.post('/calculator', (req, res) => {
     let numbersToCrunch = req.body;
-    // console.log(numbersToCrunch);
     // call application to run math
     calculateObject(numbersToCrunch);
     res.sendStatus(201);
+});
+
+//attempt at app.delete
+app.delete('/calculator', function (req, res) {
+    calculationHistory = [];
+    res.send(calculationHistory)
 });
 
 

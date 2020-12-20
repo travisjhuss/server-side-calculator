@@ -20,6 +20,7 @@ function onReady() {
     $('#eightBtn').on('click', eightButton);
     $('#nineBtn').on('click', nineButton);
     $('#pointBtn').on('click', pointButton);
+    $('#delete-history').on('click', deleteHistory);
 
 } // end onReady
 
@@ -66,7 +67,6 @@ function runCalculator() {
 
 
 function zeroButton() {
-    // console.log('clicked zero');
     if ($('#calcScreen').text() !== '0') {
         $('#calcScreen').append('0');
     }
@@ -74,7 +74,6 @@ function zeroButton() {
 } // end zeroButton
 
 function oneButton() {
-    // console.log('clicked one');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('1');
@@ -84,7 +83,6 @@ function oneButton() {
 } // end oneButton
 
 function twoButton() {
-    // console.log('clicked two');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('2');
@@ -95,7 +93,6 @@ function twoButton() {
 } // end twoButton
 
 function threeButton() {
-    // console.log('clicked three');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('3');
@@ -106,7 +103,6 @@ function threeButton() {
 } // end threeButton
 
 function fourButton() {
-    // console.log('clicked four');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('4');
@@ -117,7 +113,6 @@ function fourButton() {
 } // end fourButton
 
 function fiveButton() {
-    // console.log('clicked five');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('5');
@@ -128,7 +123,6 @@ function fiveButton() {
 } // end fiveButton
 
 function sixButton() {
-    // console.log('clicked six');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('6');
@@ -139,7 +133,6 @@ function sixButton() {
 } // end sixButton
 
 function sevenButton() {
-    // console.log('clicked seven');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('7');
@@ -150,7 +143,6 @@ function sevenButton() {
 } // end sevenButton
 
 function eightButton() {
-    // console.log('clicked eight');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('8');
@@ -161,7 +153,6 @@ function eightButton() {
 } // end eightButton
 
 function nineButton() {
-    // console.log('clicked nine');
     if ($('#calcScreen').text() === '0') {
         $('#calcScreen').text('')
         $('#calcScreen').append('9');
@@ -172,9 +163,11 @@ function nineButton() {
 } // end nineButton
 
 function pointButton() {
-    // console.log('clicked point');
-    $('#calcScreen').append('.');
-
+    // check if point already there
+    let equationString = $('#calcScreen').text();
+    if (equationString.charAt(equationString.length - 1) !== '.') {
+        $('#calcScreen').append('.');
+    }
 } // end pointButton
 
 function plusOperator() {
@@ -227,6 +220,16 @@ function clearCalc() {
     $('.hidden-message').text('');
 
 } // end clearCalc
+
+function deleteHistory() {
+    $.ajax({
+        url: '/calculator',
+        type: 'DELETE'
+    }).then(function (response) {
+        // empty history
+        $('#calcHistory').empty();
+    })
+} // end deleteHistory
 
 // ------------ END BUTTON FUNCTIONS ------------ //
 

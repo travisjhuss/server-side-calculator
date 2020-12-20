@@ -83,12 +83,21 @@ body {
     font-family: 'Orbitron';
 }
 
+.bg-overrideDH {
+    color: #F5F5F5;
+    border-right: black ridge 1px;
+    border-bottom: black ridge 1px;
+    font-size: 15px;
+    font-family: 'Orbitron';
+}
+
+
 ul {
     list-style-type: none;
 }
 
 .history {
-    margin-top: 5%;
+    margin-top: 3%;
     font-family: 'Orbitron';
     font-weight: 400;
     font-size: 20px;
